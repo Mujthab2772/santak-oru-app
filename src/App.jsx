@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
 import Dashboard from './pages/Dashboard';
 import SecretSanta from './pages/SecretSanta';
@@ -10,7 +9,7 @@ import Snowfall from './components/Snowfall';
 
 function App() {
   return (
-    <Router basename="/santak-oru-app/">
+    <Router>
       <Snowfall />
       <Routes>
         <Route path="/" element={<Landing />} />
