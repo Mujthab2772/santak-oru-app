@@ -22,6 +22,8 @@ export default {
             animation: {
                 'snow': 'snowfall 10s linear infinite',
                 'float': 'float 3s ease-in-out infinite',
+                'marquee': 'marquee 25s linear infinite',
+                'spin-slow': 'spin 8s linear infinite',
             },
             keyframes: {
                 snowfall: {
@@ -31,6 +33,10 @@ export default {
                 float: {
                     '0%, 100%': { transform: 'translateY(0)' },
                     '50%': { transform: 'translateY(-10px)' },
+                },
+                marquee: {
+                    '0%': { transform: 'translateX(100%)' },
+                    '100%': { transform: 'translateX(-100%)' },
                 }
             }
         },

@@ -10,6 +10,7 @@ import FestiveAlert from '../components/FestiveAlert';
 import SocialShareModal from '../components/SocialShareModal';
 import AddGiftModal from '../components/AddGiftModal';
 import ConfirmationModal from '../components/ConfirmationModal';
+import SantaTracker from '../components/SantaTracker';
 
 const MOODS = [
     "Feeling generous! 🎁", "Checking my list twice... 📝", "Ho Ho Ho! 🎅", "Where are the cookies? 🍪", "Sleigh needs a tune-up 🛷"
@@ -170,12 +171,14 @@ const Dashboard = () => {
                     <p className="text-gray-500 italic mt-1">Status: <span className="text-christmas-green font-bold">{santaMood}</span></p>
                 </div>
 
-                <div className="flex gap-4">
-                    <div className="bg-white p-4 rounded-xl shadow-md border-b-4 border-christmas-gold text-center min-w-[120px]">
+                <div className="flex flex-wrap md:flex-nowrap gap-4 items-center justify-center">
+                    <SantaTracker />
+
+                    <div className="bg-white p-4 rounded-xl shadow-md border-b-4 border-christmas-gold text-center min-w-[120px] h-[160px] flex flex-col justify-center">
                         <span className="block text-gray-400 text-xs uppercase font-bold">Niceness Score</span>
                         <span className={`block text-3xl font-heading ${nicenessScore > 90 ? 'text-green-600' : 'text-yellow-600'}`}>{nicenessScore}%</span>
                     </div>
-                    <div className="bg-white p-4 rounded-xl shadow-md border-b-4 border-christmas-green text-center min-w-[140px]">
+                    <div className="bg-white p-4 rounded-xl shadow-md border-b-4 border-christmas-green text-center min-w-[140px] h-[160px] flex flex-col justify-center">
                         <span className="block text-gray-400 text-xs uppercase font-bold">Budget Spent</span>
                         <span className="block text-2xl font-bold text-gray-700">${calculateTotalSpent()} <span className="text-sm text-gray-400 font-normal">/ ${calculateTotalBudget()}</span></span>
                     </div>
@@ -208,14 +211,6 @@ const Dashboard = () => {
                     </div>
                     <span className="font-bold text-gray-700">Santa Roast</span>
                 </Link>
-                {/* 
-                <button onClick={() => setShowShareModal(true)} className="glass-card p-4 hover:scale-105 transition-transform flex flex-col items-center justify-center text-center gap-2 group cursor-pointer">
-                    <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors">
-                        <Share2 size={24} />
-                    </div>
-                    <span className="font-bold text-gray-700">Share Plan</span>
-                </button> 
-                */}
             </div>
 
             {/* Main Recipient Grid */}
