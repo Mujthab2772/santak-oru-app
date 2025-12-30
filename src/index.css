@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Outfit:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-primary: #8B0000;
+  --color-primary-light: #B22222;
+  --color-secondary: #228B22;
+  --color-accent: #FFD700;
+  --color-background: #FAFAFA;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--color-background);
+  color: #333;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Mountains of Christmas', cursive;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Custom Base Classes */
+.glass-card {
+  @apply bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-white/50;
+}
+
+.btn-primary {
+  @apply bg-christmas-red text-white hover:bg-red-800 transition-all duration-300 font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-white text-christmas-green border-2 border-christmas-green hover:bg-green-50 transition-all duration-300 font-bold py-2 px-6 rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+}
+
+.btn-accent {
+  @apply bg-christmas-gold text-red-900 hover:bg-yellow-400 transition-all duration-300 font-bold py-2 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+}
+
+/* Snowflake Animation */
+.snowflake {
+  position: absolute;
+  top: -20px;
+  color: #fff;
+  animation: snowfall linear infinite;
+  z-index: 10;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110vh) translateX(30px) rotate(360deg);
+    opacity: 0.3;
+  }
+}
