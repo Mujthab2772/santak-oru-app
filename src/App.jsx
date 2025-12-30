@@ -10,7 +10,7 @@ import Snowfall from './components/Snowfall';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/santak-oru-app/">
       <Snowfall />
       <Routes>
         <Route path="/" element={<Landing />} />
